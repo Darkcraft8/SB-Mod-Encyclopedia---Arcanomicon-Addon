@@ -1,0 +1,158 @@
+{
+    "priority" : 98,
+    "note" : "Info and maybe quest focused around the arcane star",
+    "name" : "arcana_arcaneStar",
+    "title" : "^shadow;Arcanic Past^reset;",
+    "subTitle" : "^shadow;The buried unsight will aid your path.^reset;",
+    "icon" : "/celestial/stars/arcana_star_arcane_17px.png:1",
+
+    "unloadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.resetMusic",
+            "args" : [1]
+        }
+    ],
+    "loadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.setMusic",
+            "args" : [[
+                "/music/elegy-of-the-star.ogg",
+                "/music/frozen-in-time.ogg",
+                "/music/gallyri-islands.ogg",
+                "/music/over-the-spring-horizon.ogg",
+                "/music/woodland-trance.ogg",
+                "/music/jupiter.ogg",
+                "/music/hymn-to-the-stars.ogg",
+                "/music/haiku.ogg",
+                "/music/m54.ogg"
+            ], 1]
+        }
+    ],
+    "background" : {
+        "background_1" : {
+            "parallax" : 0.95,
+            "image" : "/interface/cockpit/nebula1.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "background_2" : {
+            "parallax" : 0.75,
+            "image" : "/interface/cockpit/bgstars.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "arcana_star_arcane" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_arcane.png",
+            "scale" : 1,
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        }
+    },
+    "btn" : {
+        "updateLog" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_arcanaUpdates.png",
+                "hover" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -23],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "updateLog",
+                    
+            "requires" : [],
+            "hideWhenDisabled" : false,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_updates/arcana_updates_gui.config", false],
+
+            "tooltipCfg" : "Updates"
+        },
+
+        "galacticAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_galacticAtlas.png",
+                "hover" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "galacticAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : true,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_galacticAtlas/arcana_galacticatlas.config", false],
+
+            "tooltipCfg" : "Galactis Atlas"
+        },
+        "seekersAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/items/active/arcana_atlas/icon.png",
+                "hover" : "/items/active/arcana_atlas/icon.png?brightness=25?saturation=-25",
+                "pressed" : "/items/active/arcana_atlas/icon.png?brightness=-25?saturation=-25",
+                "disabled" : "/items/active/arcana_atlas/icon.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "seekersAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : false,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_atlas/arcana_atlas.config", false],
+
+            "tooltipCfg" : "Seeker Atlas"
+        }        
+    }
+}

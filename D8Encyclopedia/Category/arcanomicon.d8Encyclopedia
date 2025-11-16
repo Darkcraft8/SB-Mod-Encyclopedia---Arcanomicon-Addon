@@ -1,0 +1,27 @@
+{
+    "priority" : -10000,
+    "name" : "arcanomicon",
+    "title" : "^shadow;Arcanomicon^reset;",
+    "subTitle" : "^shadow;Click To Open The Arcanomicon^reset;",
+    "icon" : "/D8Encyclopedia/Category/arcanaAddonIcon.png",
+
+    "requires" : [{
+        "type" : "function",
+        "call" : "jsonHasParameter",
+        "args" : ["/versioning.config", "sva_arcana"],
+        "invert" : false
+    }],
+    "hideWhenDisabled" : true,
+
+    "unloadEvent" : [
+    ],
+    "loadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.scriptpane",
+            "args" : ["/D8Encyclopedia/Pane/arcana/pane.config", true]
+        }
+    ],
+    "background" : {},
+    "btn" : {}
+}

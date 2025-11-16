@@ -1,0 +1,10 @@
+{
+    "main" : "/D8Encyclopedia/Category/arcana/arcana_main.json",
+    "boss" : "/D8Encyclopedia/Category/arcana/arcana_boss.json",
+    "arcaneStar" : "/D8Encyclopedia/Category/arcana/arcana_arcaneStar.json",
+    "illuminatedStar" : "/D8Encyclopedia/Category/arcana/arcana_illuminatedStar.json",
+    "superstormStar" : "/D8Encyclopedia/Category/arcana/arcana_superstormStar.json",
+    "tripolarStar" : "/D8Encyclopedia/Category/arcana/arcana_tripolarStar.json",
+    "mirageStar" : "/D8Encyclopedia/Category/arcana/arcana_mirageStar.json",
+    "return" : "/D8Encyclopedia/Category/returnToEncyclopedia_open.json"
+}

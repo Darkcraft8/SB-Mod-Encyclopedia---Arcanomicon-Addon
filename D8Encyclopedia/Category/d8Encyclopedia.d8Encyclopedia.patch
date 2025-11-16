@@ -1,0 +1,37 @@
+[
+  {
+    "op": "add",
+    "path": "/btn/arcanaAddon",
+    "value": {
+      "priority" : 100,
+      "parallax" : 0,
+      "image" : {
+        "base" : "/D8Encyclopedia/Category/arcanaAddonIcon.png",
+        "hover" : "/D8Encyclopedia/Category/arcanaAddonIcon.png?brightness=25?saturation=-25",
+        "pressed" : "/D8Encyclopedia/Category/arcanaAddonIcon.png?brightness=-25?saturation=25",
+        "disabled" : "/D8Encyclopedia/Category/arcanaAddonIcon.png?brightness=-50?saturation=-50"
+      },
+      "frame" : 1,
+      "position" : [-24, 0],
+      "positionLocked" : true,
+      "anchor" : "bottomLeft",
+      "centered" : false,
+
+      "callback" : "buttonEvent",
+      "name" : "arcanaAddon",
+            
+      "requires" : [{
+        "type" : "function",
+        "call" : "jsonHasParameter",
+        "args" : ["/versioning.config", "sva_arcana"],
+        "invert" : false
+      }],
+      "hideWhenDisabled" : true,
+
+      "clickEventType" : "scriptpane",
+      "args" : ["/D8Encyclopedia/Pane/arcana/pane.config", true],
+
+      "tooltipCfg" : "Arcana is big enough to warrent it own list lol! ^gray;also come with a retexture!^reset;"
+    }
+  }
+]

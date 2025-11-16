@@ -1,0 +1,11 @@
+{
+  "author" : "Darkcraft8",
+  "description" : "add arcana information to D8:Encyclopedia",
+  "friendlyName" : "Arcanomicon - A D8:Encyclopedia addon for arcana information",
+  "includes" : ["d8_encyclopedia"],
+  "link" : "steam://url/CommunityFilePage/3528748174",
+  "name" : "d8_encyclopedia_arcana_addon",
+  "priority" : 1,
+  "tags" : "Miscellaneous|User Interface",
+  "version" : "V1.0.0"
+}

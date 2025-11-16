@@ -1,0 +1,826 @@
+{
+    "priority" : 99,
+    "name" : "arcana_boss",
+    "title" : "^shadow;Bosses^reset;",
+    "subTitle" : "^shadow;Pantheon of Might and Magic^reset;",
+    "icon" : "/codex/arcana_codex_boss/arcana_codex_terminusReaper.png?saturation=-100",
+
+    "unloadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.resetMusic",
+            "args" : [1]
+        }
+    ],
+    "loadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.setMusic",
+            "args" : [["/music/tidesoftheserpent.ogg"], 1]
+        }
+    ],
+    "background" : {
+        "background_1" : {
+            "parallax" : 0.95,
+            "image" : "/interface/cockpit/nebula1.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "background_2" : {
+            "parallax" : 0.75,
+            "image" : "/interface/cockpit/bgstars.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "arcana_star_arcane" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_arcane.png",
+            "frame" : 1,
+            "scale" : 0.5,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        },
+        "arcana_star_illuminated" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_illuminated.png",
+            "scale" : 0.5,
+            "frame" : 1,
+            "position" : [1000, 1000],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        },
+        "arcana_star_superstorm" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_superstorm.png",
+            "scale" : 0.5,
+            "frame" : 1,
+            "position" : [-1000, -7500],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        },
+        "arcana_star_polar" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_polar.png",
+            "scale" : 0.35,
+            "frame" : 1,
+            "position" : [0, 10000],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        },
+        "arcana_star_mirage" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_mirage.png",
+            "scale" : 0.5,
+            "frame" : 1,
+            "position" : [0, -10000],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        }
+    },
+    "btn" : {
+        "mageKing" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_mageking/body.png:idle.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_mageking/body.png:idle.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_mageking/body.png:idle.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_mageking/body.png:idle.<frame>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-100, -50],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "mageKing"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "mageKing",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Mage King Vallen\nIce Cold Clones Of The Mage King"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "Vallen the Mage King was the first Glitch to display immense magic capabilities, despite being bounded to a machine body. His powers may have originated from the Cultivator's blessing, or simply from an augment gifted by the Highmind.\n\nThough their original body was lost in the war against the machines, Vallen's icy clones continues to govern the knights of their mirage castles, eternally waiting for the Highmind's divine orders."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "detectArea" : [
+                0, 0,
+                37, 45
+            ],
+            "tooltipCfg" : "Ecountered on ^cyan;Cold^reset; planet inside their mirage castle"
+        },
+        "moltenKnight" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_fireknight/body.png:idle.<frame>?crop;36;7;92;46",
+                "hover" : "/monsters/boss/arcana_boss_fireknight/body.png:idle.<frame>?crop;36;7;92;46?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_fireknight/body.png:idle.<frame>?crop;36;7;92;46?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_fireknight/body.png:idle.<frame>?crop;36;7;92;46?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 8,
+            "position" : [100, -50],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "moltenKnight"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "moltenKnight",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Molten Knight\nThe Asthenospheric Protector"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "After being banished from his homeland, the Molten Knight was accepted by the other dark knights at the volcanic forge. As its guardian, the knight is clad in heavy armor forged in the heart of a volcano, glowing with molten veins that pulse with fiery energy."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "tooltipCfg" : "Ecountered on ^red;Hot^reset; planet guarding their volcanic forge"
+        },
+        "navigator" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_navigator/body.png:idle.<frame>?crop;13;9;49;67",
+                "hover" : "/monsters/boss/arcana_boss_navigator/body.png:idle.<frame>?crop;13;9;49;67?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_navigator/body.png:idle.<frame>?crop;13;9;49;67?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_navigator/body.png:idle.<frame>?crop;13;9;49;67?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 6,
+            "position" : [0, 80],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "navigator"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "navigator",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "The Navigator\nGlimmering Trial-Master"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "The A.I. that guides the Starstriders as well as their ship systems. Although the ancient arks were sealed beneath the waters long ago, the Navigator still remains, keeping watch of the old relics. It finds no purpose in preserving the vessel, and instead seeks to guide those who hold a glimmering potential."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Waiting inside the Sealed Ark found inside the deeps of the ^cyan;Shining Sea^reset; planets."
+        },
+
+        "cosmoNemesis" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_cosmonemesis/body/arcana_boss_cosmonemesis.png:fly.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_cosmonemesis/body/arcana_boss_cosmonemesis.png:fly.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_cosmonemesis/body/arcana_boss_cosmonemesis.png:fly.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_cosmonemesis/body/arcana_boss_cosmonemesis.png:fly.<frame>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 12,
+            "position" : [900, 920],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "cosmoNemesis"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "cosmoNemesis",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Cosmo Nemesis\nThe Glutonous Monstrosity"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "The Cosmo Nemesis is a distorted spirit that absorbed in abundance the essence of the Anima, turning it into a roaming monstrocity that spreads scorching fire. It endlessly lurks in the shadows, waiting for lost wanderers to devour them fully, absorbing even more essence to feed its gluttony."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Waiting for another prey at his temples on ^red;Animus^reset; planets"
+        },
+        "evolapis" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_evolapis/body/body.png:fly.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_evolapis/body/body.png:fly.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_evolapis/body/body.png:fly.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_evolapis/body/body.png:fly.<frame>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 12,
+            "position" : [1110, 920],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "evolapis"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "evolapis",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Evolapis\nThe Evolutif Golem"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "As Ecolife's research effort grows, they set their sight on the development of new species. Their countless experiments gave birth to a myriad of lifeforms, one of which evolved into the giant golem known as the Evolapis."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Waiting for another challenger at his temples on ^green;Evoaquatic^reset; planets"
+        },
+        "wanderingSpirit" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_wanderingspirit/body.png:idle.<frame>?crop;8;16;82;75",
+                "hover" : "/monsters/boss/arcana_boss_wanderingspirit/body.png:idle.<frame>?crop;8;16;82;75?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_wanderingspirit/body.png:idle.<frame>?crop;8;16;82;75?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_wanderingspirit/body.png:idle.<frame>?crop;8;16;82;75?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 6,
+            "position" : [1000, 1090],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "wanderingSpirit"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "wanderingSpirit",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "The Plague Doctor\nEverlasting Caretaker"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "In his eagerness to rid the disease plaguing the land, the doctor discovered something far greater: the cure to death itself and the potential to harness souls. From the spring of life, he grants immortality to all who have perished, giving rise to an unending surge of the undead."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Giving cares in the deeps of the catacombs found on ^cyan;Nightmist^reset; planets."
+        },
+
+        "aeonTimepiece" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_aeontimepiece/body/body.png:fly.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_aeontimepiece/body/body.png:fly.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_aeontimepiece/body/body.png:fly.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_aeontimepiece/body/body.png:fly.<frame>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 16,
+            "position" : [-1000, -7500],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "aeonTimepiece",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Aeon Timepiece\nThe Old Clockmakers Last Creation"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "To preserve the universe from the calamity they've created themselves, the old Clockmakers gathered all of their resources into the makings of their last and greatest invention and sacrifice. Within this eternal stasis, the Aeon Timepiece is all that remains of the long lost history."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Resting at the top of the ^orange;Timeless^reset; clocktowers."
+        },
+        
+        "dheral" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=-100?saturation=-100"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 8,
+            "position" : [-112, 9915],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "dheral",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Dheral\nThe Lunar Guardian"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "No Lore Out :C"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Guarding the treasures of the ^cyan;lunar^reset; corridors."
+        },
+
+        "solarGuardian" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_solarGuardian/parts/body/bodyfullbright.png:activate.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_solarGuardian/parts/body/bodyfullbright.png:activate.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_solarGuardian/parts/body/bodyfullbright.png:activate.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_solarGuardian/parts/body/bodyfullbright.png:activate.<frame>?brightness=-100?saturation=-100"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 5,
+            "position" : [112, 9915],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "solarGuardian"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "solarGuardian",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "Solar Guardian\nNameless Protector"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "A construct that re-manifested itself in the Solar Corridors, the Solar Guardian harnesses corridor's energy to cast out fiery attacks against any intruders. Its body is built similar to the Vault Guardians, thus is believed to be a machine of the Ancients."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "Guarding the treasures of the ^red;solar^reset; corridors."
+        },
+
+        "terminusReaper" : {
+            "priority" : 1000,
+            "image" : {
+                "base" : "/monsters/boss/arcana_boss_terminusreaper/fullbright.png:idle.<frame>?crop;29;35;156;144",
+                "hover" : "/monsters/boss/arcana_boss_terminusreaper/fullbright.png:idle.<frame>?crop;29;35;156;144?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_terminusreaper/fullbright.png:idle.<frame>?crop;29;35;156;144?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_terminusreaper/fullbright.png:idle.<frame>?crop;29;35;156;144?brightness=-100?saturation=-100"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 6,
+            "position" : [0, -10000],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "terminusReaper"]]],
+                "invert" : false
+            }],
+            "callback" : "buttonEvent",
+            "name" : "terminusReaper",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "The Harvester\n^red;Eon Of Harvests, Eon Of Memories^reset;"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "A small fragment of an ancient being that which old scriptures have described as the Reaper of Stars. When a star falls, the Harvester will emerge to return its eons of memories to the universe's embrace."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "???"
+        },
+
+        "arcaneStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-10, 10],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "arcaneStarQuick",
+
+            "clickEventType" : "setCamPos",
+            "args" : [[0, 0]],
+
+            "tooltipCfg" : "Arcane Star"
+        },
+        "illuminatedStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-10, 30],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "navigator"]]],
+                "invert" : false
+            }],
+
+            "callback" : "buttonEvent",
+            "name" : "illuminatedStarQuick",
+
+            "clickEventType" : "setCamPos",
+            "args" : [[1000, 1000]],
+
+            "tooltipCfg" : "Illuminated Star"
+        },
+        "superstormStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-10, 50],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollectedAny",
+                "args" : [[["arcana_bosses", "cosmoNemesis"], ["arcana_bosses", "evolapis"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+            
+            "callback" : "buttonEvent",
+            "name" : "superstormStarQuick",
+
+            "clickEventType" : "setCamPos",
+            "args" : [[-1000, -7500]],
+
+            "tooltipCfg" : "Superstorm Star"
+        },
+        "polarStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-10, 70],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "polarStarQuick",
+
+            "clickEventType" : "setCamPos",
+            "args" : [[0, 10000]],
+
+            "tooltipCfg" : "Tripolar Star"
+        },
+        "mirageStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-10, 90],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "mirageStarQuick",
+
+            "clickEventType" : "setCamPos",
+            "args" : [[0, -10000]],
+
+            "tooltipCfg" : "Mirage Star"
+        }
+    }
+}
