@@ -1,0 +1,191 @@
+{
+    "priority" : 94,
+    "note" : "Info and maybe quest focused around the superstorm star",
+    "name" : "arcana_mirageStar",
+    "title" : "^shadow,red;Death doors becon, your test approach.^reset;",
+    "subTitle" : "^shadow,red;Pull the veil, and learn eon of teaching.^reset;",
+    "disabledTooltip" : "^red;Unlocked Through : ???^reset;",
+    "icon" : "/celestial/stars/arcana_star_mirage_19px.png:1",
+    
+    "unloadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.resetMusic",
+            "args" : [1]
+        }
+    ],
+    "loadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.setMusic",
+            "args" : [[
+                "/music/04-thetis.ogg",
+                "/music/temple-of-kluex.ogg"
+            ], 1]
+        }
+    ],
+    
+    "requires" : [{
+        "type" : "function",
+        "call" : "requirement.hasCollected",
+        "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+        "invert" : false
+    }],
+    "hideWhenDisabled" : false,
+
+    "background" : {
+        "background_1" : {
+            "parallax" : 0.95,
+            "image" : "/interface/cockpit/nebula1.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "background_2" : {
+            "parallax" : 0.75,
+            "image" : "/interface/cockpit/bgstars.png",
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "arcana_star_mirage" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_mirage.png",
+            "scale" : 1,
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        }
+    },
+    "particleSource" : {
+        "atmosphericParticles" : {
+            "emissionRate" : 30,
+            "particles" : [
+                {
+                    "positionLocked" : true,
+                    "position" : [0, 0],
+                    "velocity" : [0, 30],
+                    "targetVel" : [0, 60],
+                    "targetVelStrength" : [0, 5],
+                    "image" : "/animations/sparkles/sparkle3.png:2",
+                    "timeToLive" : 1,
+                    "timeToDestroy" : 0.5,
+                    "origin" : "centerBottom",
+                    "scale" : 1,
+                    "variant" : {
+                        "velocity" : [15, 15],
+                        "position" : [297.5, 0],
+                        "rotation" : 180,
+                        "rotationSpeed" : 5,
+                        "timeToLive" : 0.5,
+                        "timeToDestroy" : 0.25,
+                        "scale" : 0.5
+                    },
+                    "destructionKind" : "shrinkAndFade",
+                    "color" : [255, 255, 255, 255]
+                }
+            ]
+        }
+    },
+    "btn" : {
+        "updateLog" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_arcanaUpdates.png",
+                "hover" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -23],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "updateLog",
+                    
+            "requires" : [],
+            "hideWhenDisabled" : false,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_updates/arcana_updates_gui.config", false],
+
+            "tooltipCfg" : "Updates"
+        },
+        
+        "galacticAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_galacticAtlas.png",
+                "hover" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "galacticAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : true,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_galacticAtlas/arcana_galacticatlas.config", false],
+
+            "tooltipCfg" : "Galactis Atlas"
+        },
+        "seekersAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/items/active/arcana_atlas/icon.png",
+                "hover" : "/items/active/arcana_atlas/icon.png?brightness=25?saturation=-25",
+                "pressed" : "/items/active/arcana_atlas/icon.png?brightness=-25?saturation=-25",
+                "disabled" : "/items/active/arcana_atlas/icon.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-23, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "seekersAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : false,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_atlas/arcana_atlas.config", false],
+
+            "tooltipCfg" : "Seeker Atlas"
+        }        
+    }
+}

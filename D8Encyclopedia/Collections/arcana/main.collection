@@ -1,0 +1,14 @@
+{
+  "name" : "d8Encylopedia_Arcana_Main",
+  "title" : "^white;The^orange; Arcanomicon ^white;Progression^#fff0,set;",
+  "type" : "generic",
+
+  "collectables" : {
+    "arcana_crafting_main_1" : {
+      "order" : 1,
+      "title" : "An Magician Beginning",
+      "description" : "The Magician's Table is the main crafting station of arcana, it used to create the other stations of the mod and a few materials.",
+      "icon" : "/objects/crafting/arcana_crafting_main_1/1.png"
+    }
+  }
+}

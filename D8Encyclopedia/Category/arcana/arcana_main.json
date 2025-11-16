@@ -1,0 +1,871 @@
+{
+    "priority" : 100,
+    "name" : "arcana_main",
+    "title" : "^shadow;Progression^reset;",
+    "subTitle" : "^shadow;Simple Pointer(s)^reset;",
+    "icon" : "/quickbar/arcana_quickbar_galacticatlas.png",
+
+    "unloadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.resetMusic",
+            "args" : [1]
+        }
+    ],
+    "loadEvent" : [
+        {
+            "type" : "function",
+            "call" : "clickEventType.setMusic",
+            "args" : [["/music/surface.ogg"], 1]
+        }
+    ],
+    "background" : {
+        "background_1" : {
+            "parallax" : 0.95,
+            "image" : "/interface/cockpit/nebula1.png",
+            "frame" : 1,
+            "zLevel" : -1000,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "background_2" : {
+            "parallax" : 0.75,
+            "image" : "/interface/cockpit/bgstars.png",
+            "frame" : 1,
+            "zLevel" : -1000,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "tiled" : true
+        },
+        "arcana_star_arcane" : {
+            "parallax" : 0,
+            "image" : "/celestial/system/arcana_star_arcane.png",
+            "frame" : 1,
+            "zLevel" : -100,
+            "scale" : 0.15,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true
+        },
+        
+        
+        "mainCrafting_line1" : {
+            "type" : "line",
+            "zLevel" : 1,
+            "requires" : [],
+
+            "startPos" : [0, 0],
+            "endPos" : [0, 50],
+            "color" : [255, 255, 255, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : false,
+            "anchor" : "center",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [255, 255, 255, 150]
+                }
+            }
+        },
+        "mainCrafting_line2" : {
+            "type" : "line",
+            "zLevel" : 1,
+            "requires" : [],
+
+            "startPos" : [0, 50],
+            "endPos" : [0, 100],
+            "color" : [255, 255, 255, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : false,
+            "anchor" : "center",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [255, 255, 255, 150]
+                }
+            }
+        },
+        "mainCrafting_line3" : {
+            "type" : "line",
+            "zLevel" : 1,
+            "requires" : [],
+
+            "startPos" : [0, 100],
+            "endPos" : [0, 150],
+            "color" : [255, 255, 255, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : false,
+            "anchor" : "center",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [255, 255, 255, 150]
+                }
+            }
+        },
+        "mainCrafting_line4" : {
+            "type" : "line",
+            "zLevel" : 1,
+            "requires" : [],
+
+            "startPos" : [0, 150],
+            "endPos" : [0, 200],
+            "color" : [255, 255, 255, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : false,
+            "anchor" : "center",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [255, 255, 255, 150]
+                }
+            }
+        },
+
+        "qB_arcaneToIllum" : {
+            "type" : "line",
+            "zLevel" : 1,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "navigator"]]],
+                "invert" : false
+            }],
+
+            "startPos" : [-11, 8],
+            "endPos" : [-11, 30],
+            "color" : [180, 180, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [200, 200, 200, 255]
+                }
+            }
+        },
+        "qB_illumToStorm" : {
+            "type" : "line",
+            "zLevel" : 2,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollectedAny",
+                "args" : [[["arcana_bosses", "cosmoNemesis"], ["arcana_bosses", "evolapis"]]],
+                "invert" : false
+            }],
+
+            "startPos" : [-11, 30],
+            "endPos" : [-11, 50],
+            "color" : [200, 200, 200],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [200, 0, 200, 255]
+                }
+            }
+        },
+        "qB_stormToPolar" : {
+            "type" : "line",
+            "zLevel" : 2,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+
+            "startPos" : [-11, 50],
+            "endPos" : [-11, 70],
+            "color" : [200, 0, 200],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [255, 255, 255, 255]
+                }
+            }
+        },
+        "qB_polarToMirage" : {
+            "type" : "line",
+            "zLevel" : 2,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+
+            "startPos" : [-11, 70],
+            "endPos" : [-11, 90],
+            "color" : [255, 255, 255],
+            "lineWidth" : 3,
+
+            "parallax" : 0,
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "encyclopedia" : {
+                "wave" : {
+                    "startStrenght" : 1,
+                    "endStrenght" : 1,
+                    "endColor" : [50, 0, 0, 255]
+                }
+            }
+        }
+    },
+    "btn" : {
+        "updateLog" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_arcanaUpdates.png",
+                "hover" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-20, -23],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "updateLog",
+                    
+            "requires" : [],
+            "hideWhenDisabled" : false,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_updates/arcana_updates_gui.config", false],
+
+            "tooltipCfg" : "Updates"
+        },
+
+        "arcana_guideBook" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/items/active/arcana_atlas/guide.png",
+                "hover" : "/items/active/arcana_atlas/guide.png?brightness=25?saturation=-25",
+                "pressed" : "/items/active/arcana_atlas/guide.png?brightness=-25?saturation=-25",
+                "disabled" : "/items/active/arcana_atlas/guide.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-20, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "seekersAtlas",
+                    
+            "requires" : [],
+            "hideWhenDisabled" : false,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_books/arcana_guideBook.config", false],
+
+            "tooltipCfg" : "^orange;Arcana Guidebook^reset;"
+        },
+
+        "galacticAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/quickbar/arcana_quickbar_galacticAtlas.png",
+                "hover" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=25?saturation=-25",
+                "pressed" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-25?saturation=-25",
+                "disabled" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-20, -63],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "galacticAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : true,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_galacticAtlas/arcana_galacticatlas.config", false],
+
+            "tooltipCfg" : "Galactis Atlas"
+        },
+        "seekersAtlas" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/items/active/arcana_atlas/icon.png",
+                "hover" : "/items/active/arcana_atlas/icon.png?brightness=25?saturation=-25",
+                "pressed" : "/items/active/arcana_atlas/icon.png?brightness=-25?saturation=-25",
+                "disabled" : "/items/active/arcana_atlas/icon.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [-20, -63],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+
+            "callback" : "buttonEvent",
+            "name" : "seekersAtlas",
+                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : false,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true,
+
+            "clickEventType" : "scriptpane",
+            "args" : ["/interface/scripted/arcana_atlas/arcana_atlas.config", false],
+
+            "tooltipCfg" : "Seeker Atlas"
+        },
+        
+        
+        "categoryInfo" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "image" : {
+                "base" : "/D8Encyclopedia/Pane/new/icon.png",
+                "hover" : "/D8Encyclopedia/Pane/new/icon.png?brightness=25?saturation=-25",
+                "pressed" : "/D8Encyclopedia/Pane/new/icon.png?brightness=-25?saturation=-25",
+                "disabled" : "/D8Encyclopedia/Pane/new/icon.png?brightness=-50?saturation=-50"
+            },
+            "frame" : 1,
+            "position" : [0, 0],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "categoryInfo",
+                    
+            "requires" : [],
+            "hideWhenDisabled" : false,
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "popup",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "^#ffe351;Arcanomicon^reset; Main Category"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "- This category contain some lose guide/pointer toward progression\n- If you want to directly start playing with the mod content at the start of your playthrough i suggest you first visit a Blistering planet found around an arcane star, after crafting a ^#9e6b55;Magician's Table^reset; (see the button right above this one)."
+                                        } 
+                                    }
+                                } 
+                            } 
+                        }
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "How to start making object and item from ^#ffe351;Arcana^reset;"
+        },
+
+        "Magicians Table" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/objects/crafting/arcana_crafting_main_1/1_icon.png",
+                "hover" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=25?saturation=-25",
+                "pressed" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-50?saturation=-25",
+                "disabled" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [0, 50],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "Magicians Table",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "craftable",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "^#9e6b55;Magician's Table^reset;"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "craftingStationIcon" : {
+                                    "file" : "/objects/crafting/upgradeablecraftingobjects/inventorstable/inventorstableicon.png"
+                                },
+                                "objectImage" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/1.png:default.default"
+                                },
+                                "objectLabel" : {
+                                    "value" : "Crafted Through:\n^orange;Inventor's Table^reset;"
+                                },
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "\"A table that allows you to craft various useful arcane inventions.\"\n\n- The ^#9e6b55;Magician's Table^reset; is the most important crafting station in ^yellow;Arcana^reset;.\n- It's to ^yellow;Arcana^reset; what the ^orange;Inventor's Table^reset; is to ^cyan;Vanilla^reset;."
+                                        } 
+                                    }
+                                } 
+                            } 
+                        }
+                    },
+                    "recipe" : "/recipes/arcana/main/1_inventions/arcana_crafting_main_1.recipe"
+                }
+            ],
+
+            "tooltipCfg" : "^#9e6b55;Magician's Table^reset;| How to start making object and item from ^#ffe351;Arcana^reset;"
+        },
+        "Academicians Table" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/objects/crafting/arcana_crafting_main_1/2_icon.png",
+                "hover" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=25?saturation=-25",
+                "pressed" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=-50?saturation=-25",
+                "disabled" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [0, 100],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "Academicians Table",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "craftable",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "^#3ec7dd;Academician's Table^reset;"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "craftingStationIcon" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/1_icon.png"
+                                },
+                                "objectImage" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/2.png:default.default"
+                                },
+                                "objectLabel" : {
+                                    "value" : "Upgrading: ^#9e6b55;Magician's Table^reset;"
+                                },
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "\"An arcanium crafting table, lets you craft various useful arcane inventions.\"\n\n- This Upgrade allow you to craft more object."
+                                        } 
+                                    }
+                                } 
+                            } 
+                        }
+                    },
+                    "recipe" : {
+                        "input" : [
+                            { "item" : "arcana_ore_arcaniumOre", "count" : 10 },
+                            { "item" : "battery", "count" : 1 },
+                            { "item" : "refinedaegisalt", "count" : 4 },
+                            { "item" : "refinedferozium", "count" : 4 },
+                            { "item" : "refinedviolium", "count" : 4 }
+                        ]
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "^#3ec7dd;Academician's Table^reset;| Obtaining an upgrade."
+        },
+        "Cyberneticists Table" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/objects/crafting/arcana_crafting_main_1/3_icon.png",
+                "hover" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=25?saturation=-25",
+                "pressed" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-50?saturation=-25",
+                "disabled" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [0, 150],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "Cyberneticists Table",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "craftable",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "^#bbbdce;Cyberneticist's Table^reset;"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "craftingStationIcon" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/2_icon.png"
+                                },
+                                "objectImage" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/3.png:default.default"
+                                },
+                                "objectLabel" : {
+                                    "value" : "Upgrading: ^#3ec7dd;Academician's Table^reset;"
+                                },
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "\"An advanced crafting table, lets you craft various useful Orion inventions.\"\n\n- This Upgrade allow you to craft more object."
+                                        } 
+                                    }
+                                } 
+                            } 
+                        }
+                    },
+                    "recipe" : {
+                        "input" : [
+                            { "item" : "arcana_bar_thoriumBar", "count" : 10 },
+                            { "item" : "orion_crafting_enhancedBattery", "count" : 1 },
+                            { "item" : "orion_crafting_jupiterCell", "count" : 1 }
+                        ]
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "^#bbbdce;Cyberneticist's Table^reset;| Obtaining an upgrade."
+        },
+        "Artificers Table" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/objects/crafting/arcana_crafting_main_1/4_icon.png",
+                "hover" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=25?saturation=-25",
+                "pressed" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=-50?saturation=-25",
+                "disabled" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [0, 200],
+            "positionLocked" : false,
+            "anchor" : "center",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "Artificers Table",
+
+            "clickEventType" : "prefab",
+            "args" : [
+                "craftable",
+                {
+                    "gui" : {
+                        "labelTitle" : {
+                            "value" : "^#dfcf4e;Artificer's Table^reset;"
+                        },
+                        "labelLayout" : {
+                            "children" : {
+                                "craftingStationIcon" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/3_icon.png"
+                                },
+                                "objectImage" : {
+                                    "file" : "/objects/crafting/arcana_crafting_main_1/4.png:default.default"
+                                },
+                                "objectLabel" : {
+                                    "value" : "Upgrading: ^#bbbdce;Cyberneticist's Table^reset;"
+                                },
+                                "labelScrollArea"  : {
+                                    "children": {
+                                        "labelText" : {
+                                            "value" : "\"The most capable inventing table of all, made from Aureola bars.\"\n\n- This Upgrade allow you to craft more object."
+                                        } 
+                                    }
+                                } 
+                            } 
+                        }
+                    },
+                    "recipe" : {
+                        "input" : [
+                            { "item" : "arcana_bar_aureolaBar", "count" : 1 },
+                            { "item" : "inventorstable", "count" : 1 },
+                            { "item" : "craftingfurnace", "count" : 1 },
+                            { "item" : "craftingfarm", "count" : 1 },
+                            { "item" : "craftinganvil", "count" : 1 },
+                            { "item" : "craftingfurniture", "count" : 1 },
+                            { "item" : "craftingmedical", "count" : 1 },
+                            { "item" : "woodencookingtable", "count" : 1 },
+                            { "item" : "craftingwheel", "count" : 1 }
+                        ]
+                    }
+                }
+            ],
+
+            "tooltipCfg" : "^#dfcf4e;Artificer's Table^reset;| Obtaining an upgrade."
+        },
+
+        "arcaneStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_arcane_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-11, 10],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+
+            "require" : [],
+            "callback" : "buttonEvent",
+            "name" : "arcaneStarQuick",
+
+            "clickEventType" : "setCategory",
+            "args" : ["arcana_arcaneStar"],
+
+            "tooltipCfg" : "Arcane Star\n^shadow,#AAA;Arcanic Past\nThe buried unsight will aid your path.^reset;"
+        },
+        "illuminatedStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_illuminated_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-11, 30],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "navigator"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "illuminatedStarQuick",
+
+            "clickEventType" : "setCategory",
+            "args" : ["arcana_illuminatedStar"],
+
+            "tooltipCfg" : "Illuminated Star\n^shadow,#AAA;Justice and Judgement\nSecret of the Lumen and the Abyss^reset;"
+        },
+        "superstormStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_superstorm_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-11, 50],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollectedAny",
+                "args" : [[["arcana_bosses", "cosmoNemesis"], ["arcana_bosses", "evolapis"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+            
+            "callback" : "buttonEvent",
+            "name" : "superstormStarQuick",
+
+            "clickEventType" : "setCategory",
+            "args" : ["arcana_superstormStar"],
+
+            "tooltipCfg" : "Superstorm Star\n^shadow,#AAA;Super Charged [DEAL]\nTake A [^shadow,cyan;BIG ^shadow,magenta;SHOT^shadow,#AAA;]^reset;"
+        },
+        "polarStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_polar_17px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-11, 70],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "polarStarQuick",
+
+            "clickEventType" : "setCategory",
+            "args" : ["arcana_tripolarStar"],
+
+            "tooltipCfg" : "Tripolar Star\n^shadow,#AAA;Ancient Trinity\nDorment Potential^reset;"
+        },
+        "mirageStarQuick" : {
+            "priority" : 1000,
+            "parallax" : 0,
+            "zoom" : 0,
+            "image" : {
+                "base" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>",
+                "hover" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=25?saturation=-25",
+                "pressed" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=-50?saturation=-25",
+                "disabled" : "/celestial/stars/arcana_star_mirage_19px.png:<frameIndex>?brightness=-95?saturation=-95"
+            },
+            "sounds" : {
+                "base" : [],
+                "hover" : [],
+                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+            },
+            "frame" : 4,
+            "position" : [-11, 90],
+            "positionLocked" : true,
+            "anchor" : "bottomRight",
+            "centered" : true,
+            
+            "requires" : [{
+                "type" : "function",
+                "call" : "requirement.hasCollected",
+                "args" : [[["arcana_bosses", "aeonTimepiece"]]],
+                "invert" : false
+            }],
+            "hideWhenDisabled" : true,
+
+            "callback" : "buttonEvent",
+            "name" : "mirageStarQuick",
+
+            "clickEventType" : "setCategory",
+            "args" : ["arcana_mirageStar"],
+
+            "tooltipCfg" : "Mirage Star\n^shadow,red;Death doors becon, your test approach.\nPull the veil, and learn eon of teaching.^reset;"
+        }
+        
+    }
+}
