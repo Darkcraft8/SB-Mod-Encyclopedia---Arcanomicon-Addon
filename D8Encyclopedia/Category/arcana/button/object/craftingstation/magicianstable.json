@@ -1,0 +1,60 @@
+{
+    "parallax" : 0,
+    "zoom" : 0,
+    "image" : {
+        "base" : "/objects/crafting/arcana_crafting_main_1/1_icon.png",
+        "hover" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=25?saturation=-25",
+        "pressed" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-50?saturation=-25",
+        "disabled" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-95?saturation=-95"
+    },
+    "sounds" : {
+        "base" : [],
+        "hover" : [],
+        "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+        "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+    },
+    "frame" : 4,
+    "position" : [0, 0],
+    "positionLocked" : false,
+    "anchor" : "center",
+    "centered" : true,
+
+    "require" : [],
+    "callback" : "buttonEvent",
+    "name" : "magicianstable",
+
+    "clickEventType" : "prefab",
+    "args" : [
+        "craftable",
+        {
+            "gui" : {
+                "labelTitle" : {
+                    "value" : "^orange;Magician's Table^reset;"
+                },
+                "labelLayout" : {
+                    "children" : {
+                        "craftingStationIcon" : {
+                            "file" : "/objects/crafting/upgradeablecraftingobjects/inventorstable/inventorstableicon.png"
+                        },
+                        "objectImage" : {
+                            "file" : "/objects/crafting/arcana_crafting_main_1/1.png:default.default"
+                        },
+                        "objectLabel" : {
+                            "value" : "Crafted Through:\n^orange;Inventor's Table^reset;"
+                        },
+                        "labelScrollArea"  : {
+                            "children": {
+                                "labelText" : {
+                                    "value" : "\"A table that allows you to craft various useful arcane inventions.\"\n\n- The ^#9e6b55;Magician's Table^reset; is the most important crafting station in ^yellow;Arcana^reset;.\n- It's to ^yellow;Arcana^reset; what the ^orange;Inventor's Table^reset; is to ^cyan;Vanilla^reset;."
+                                } 
+                            }
+                        } 
+                    } 
+                }
+            },
+            "recipe" : "/recipes/arcana/main/1_inventions/arcana_crafting_main_1.recipe"
+        }
+    ],
+
+    "tooltipCfg" : "^orange;Magician's Table^reset;"
+}

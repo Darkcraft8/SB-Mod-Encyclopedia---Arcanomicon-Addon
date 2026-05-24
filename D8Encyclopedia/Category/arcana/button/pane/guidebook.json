@@ -1,0 +1,25 @@
+{
+    "parallax" : 0,
+    "image" : {
+        "base" : "/items/active/arcana_atlas/guide.png",
+        "hover" : "/items/active/arcana_atlas/guide.png?brightness=25?saturation=-25",
+        "pressed" : "/items/active/arcana_atlas/guide.png?brightness=-25?saturation=-25",
+        "disabled" : "/items/active/arcana_atlas/guide.png?brightness=-50?saturation=-50"
+    },
+    "frame" : 1,
+    "position" : [0, 0],
+    "positionLocked" : false,
+    "anchor" : "center",
+    "centered" : true,
+
+    "callback" : "buttonEvent",
+    "name" : "guidebook",
+                    
+    "requires" : [],
+    "hideWhenDisabled" : false,
+
+    "clickEventType" : "scriptpane",
+    "args" : ["/interface/scripted/arcana_books/arcana_guideBook.config", false],
+
+    "tooltipCfg" : "^orange;Arcana Guidebook^reset;"
+}

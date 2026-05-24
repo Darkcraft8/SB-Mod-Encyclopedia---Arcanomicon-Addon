@@ -90,6 +90,50 @@
         }
     },
     "btn" : {
+        "arcana_guideBook" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/guidebook.json",
+            "priority" : 1000,
+            "position" : [-20, -23],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false
+        },
+
+        "galacticatlas" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/galacticatlas.json",
+            "priority" : 1000,
+            "position" : [-20, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,                    
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : true,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true
+        },
+        "seekersatlas" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/seekersatlas.json",
+            "priority" : 1000,
+            "position" : [-20, -43],
+            "positionLocked" : true,
+            "anchor" : "topRight",
+            "centered" : false,
+            "requires" : [
+                {
+                    "type" : "function",
+                    "call" : "player.hasCompletedQuest",
+                    "invert" : false,
+                    "args" : ["arcana_seeker_1_missionafter"]
+                }
+            ],
+            "hideWhenDisabled" : true
+        },
+
         "mageKing" : {
             "priority" : 1000,
             "parallax" : 0,
@@ -479,10 +523,10 @@
         "dheral" : {
             "priority" : 1000,
             "image" : {
-                "base" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>",
-                "hover" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=25?saturation=-25",
-                "pressed" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=-50?saturation=-25",
-                "disabled" : "/monsters/boss/arcana_boss_dheral/body/body.png:lunar.idle.<frame>?brightness=-100?saturation=-100"
+                "base" : "/monsters/boss/arcana_boss_dheral/body/body.png:idle.<frame>",
+                "hover" : "/monsters/boss/arcana_boss_dheral/body/body.png:idle.<frame>?brightness=25?saturation=-25",
+                "pressed" : "/monsters/boss/arcana_boss_dheral/body/body.png:idle.<frame>?brightness=-50?saturation=-25",
+                "disabled" : "/monsters/boss/arcana_boss_dheral/body/body.png:idle.<frame>?brightness=-100?saturation=-100"
             },
             "sounds" : {
                 "base" : [],
@@ -511,7 +555,7 @@
                 {
                     "gui" : {
                         "labelTitle" : {
-                            "value" : "Dheral\nThe Lunar Guardian"
+                            "value" : "Erchius Herald"
                         },
                         "labelLayout" : {
                             "children" : {
@@ -528,7 +572,7 @@
                 }
             ],
 
-            "tooltipCfg" : "Guarding the treasures of the ^cyan;lunar^reset; corridors."
+            "tooltipCfg" : "Found on ^cyan;Eminsnow^reset; planets."
         },
 
         "solarGuardian" : {

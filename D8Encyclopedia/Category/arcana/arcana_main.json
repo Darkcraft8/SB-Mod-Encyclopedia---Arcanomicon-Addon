@@ -244,78 +244,31 @@
         }
     },
     "btn" : {
-        "updateLog" : {
+        "updatelog" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/updatelog.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "image" : {
-                "base" : "/quickbar/arcana_quickbar_arcanaUpdates.png",
-                "hover" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=25?saturation=-25",
-                "pressed" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-25?saturation=-25",
-                "disabled" : "/quickbar/arcana_quickbar_arcanaUpdates.png?brightness=-50?saturation=-50"
-            },
-            "frame" : 1,
             "position" : [-20, -23],
             "positionLocked" : true,
             "anchor" : "topRight",
-            "centered" : false,
-
-            "callback" : "buttonEvent",
-            "name" : "updateLog",
-                    
-            "requires" : [],
-            "hideWhenDisabled" : false,
-
-            "clickEventType" : "scriptpane",
-            "args" : ["/interface/scripted/arcana_updates/arcana_updates_gui.config", false],
-
-            "tooltipCfg" : "Updates"
+            "centered" : false
         },
 
         "arcana_guideBook" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/guidebook.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "image" : {
-                "base" : "/items/active/arcana_atlas/guide.png",
-                "hover" : "/items/active/arcana_atlas/guide.png?brightness=25?saturation=-25",
-                "pressed" : "/items/active/arcana_atlas/guide.png?brightness=-25?saturation=-25",
-                "disabled" : "/items/active/arcana_atlas/guide.png?brightness=-50?saturation=-50"
-            },
-            "frame" : 1,
             "position" : [-20, -43],
             "positionLocked" : true,
             "anchor" : "topRight",
-            "centered" : false,
-
-            "callback" : "buttonEvent",
-            "name" : "seekersAtlas",
-                    
-            "requires" : [],
-            "hideWhenDisabled" : false,
-
-            "clickEventType" : "scriptpane",
-            "args" : ["/interface/scripted/arcana_books/arcana_guideBook.config", false],
-
-            "tooltipCfg" : "^orange;Arcana Guidebook^reset;"
+            "centered" : false
         },
 
-        "galacticAtlas" : {
+        "galacticatlas" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/galacticatlas.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "image" : {
-                "base" : "/quickbar/arcana_quickbar_galacticAtlas.png",
-                "hover" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=25?saturation=-25",
-                "pressed" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-25?saturation=-25",
-                "disabled" : "/quickbar/arcana_quickbar_galacticAtlas.png?brightness=-50?saturation=-50"
-            },
-            "frame" : 1,
             "position" : [-20, -63],
             "positionLocked" : true,
             "anchor" : "topRight",
-            "centered" : false,
-
-            "callback" : "buttonEvent",
-            "name" : "galacticAtlas",
-                    
+            "centered" : false,                    
             "requires" : [
                 {
                     "type" : "function",
@@ -324,31 +277,15 @@
                     "args" : ["arcana_seeker_1_missionafter"]
                 }
             ],
-            "hideWhenDisabled" : true,
-
-            "clickEventType" : "scriptpane",
-            "args" : ["/interface/scripted/arcana_galacticAtlas/arcana_galacticatlas.config", false],
-
-            "tooltipCfg" : "Galactis Atlas"
+            "hideWhenDisabled" : true
         },
-        "seekersAtlas" : {
+        "seekersatlas" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/pane/seekersatlas.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "image" : {
-                "base" : "/items/active/arcana_atlas/icon.png",
-                "hover" : "/items/active/arcana_atlas/icon.png?brightness=25?saturation=-25",
-                "pressed" : "/items/active/arcana_atlas/icon.png?brightness=-25?saturation=-25",
-                "disabled" : "/items/active/arcana_atlas/icon.png?brightness=-50?saturation=-50"
-            },
-            "frame" : 1,
             "position" : [-20, -63],
             "positionLocked" : true,
             "anchor" : "topRight",
             "centered" : false,
-
-            "callback" : "buttonEvent",
-            "name" : "seekersAtlas",
-                    
             "requires" : [
                 {
                     "type" : "function",
@@ -357,12 +294,7 @@
                     "args" : ["arcana_seeker_1_missionafter"]
                 }
             ],
-            "hideWhenDisabled" : true,
-
-            "clickEventType" : "scriptpane",
-            "args" : ["/interface/scripted/arcana_atlas/arcana_atlas.config", false],
-
-            "tooltipCfg" : "Seeker Atlas"
+            "hideWhenDisabled" : true
         },
         
         
@@ -414,273 +346,27 @@
         },
 
         "Magicians Table" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/object/craftingstation/magicianstable.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "zoom" : 0,
-            "image" : {
-                "base" : "/objects/crafting/arcana_crafting_main_1/1_icon.png",
-                "hover" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=25?saturation=-25",
-                "pressed" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-50?saturation=-25",
-                "disabled" : "/objects/crafting/arcana_crafting_main_1/1_icon.png?brightness=-95?saturation=-95"
-            },
-            "sounds" : {
-                "base" : [],
-                "hover" : [],
-                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
-                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
-            },
-            "frame" : 4,
             "position" : [0, 50],
-            "positionLocked" : false,
-            "anchor" : "center",
-            "centered" : true,
-
-            "require" : [],
-            "callback" : "buttonEvent",
-            "name" : "Magicians Table",
-
-            "clickEventType" : "prefab",
-            "args" : [
-                "craftable",
-                {
-                    "gui" : {
-                        "labelTitle" : {
-                            "value" : "^#9e6b55;Magician's Table^reset;"
-                        },
-                        "labelLayout" : {
-                            "children" : {
-                                "craftingStationIcon" : {
-                                    "file" : "/objects/crafting/upgradeablecraftingobjects/inventorstable/inventorstableicon.png"
-                                },
-                                "objectImage" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/1.png:default.default"
-                                },
-                                "objectLabel" : {
-                                    "value" : "Crafted Through:\n^orange;Inventor's Table^reset;"
-                                },
-                                "labelScrollArea"  : {
-                                    "children": {
-                                        "labelText" : {
-                                            "value" : "\"A table that allows you to craft various useful arcane inventions.\"\n\n- The ^#9e6b55;Magician's Table^reset; is the most important crafting station in ^yellow;Arcana^reset;.\n- It's to ^yellow;Arcana^reset; what the ^orange;Inventor's Table^reset; is to ^cyan;Vanilla^reset;."
-                                        } 
-                                    }
-                                } 
-                            } 
-                        }
-                    },
-                    "recipe" : "/recipes/arcana/main/1_inventions/arcana_crafting_main_1.recipe"
-                }
-            ],
-
             "tooltipCfg" : "^#9e6b55;Magician's Table^reset;| How to start making object and item from ^#ffe351;Arcana^reset;"
         },
         "Academicians Table" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/object/craftingstation/academicianstable.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "zoom" : 0,
-            "image" : {
-                "base" : "/objects/crafting/arcana_crafting_main_1/2_icon.png",
-                "hover" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=25?saturation=-25",
-                "pressed" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=-50?saturation=-25",
-                "disabled" : "/objects/crafting/arcana_crafting_main_1/2_icon.png?brightness=-95?saturation=-95"
-            },
-            "sounds" : {
-                "base" : [],
-                "hover" : [],
-                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
-                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
-            },
-            "frame" : 4,
             "position" : [0, 100],
-            "positionLocked" : false,
-            "anchor" : "center",
-            "centered" : true,
-
-            "require" : [],
-            "callback" : "buttonEvent",
-            "name" : "Academicians Table",
-
-            "clickEventType" : "prefab",
-            "args" : [
-                "craftable",
-                {
-                    "gui" : {
-                        "labelTitle" : {
-                            "value" : "^#3ec7dd;Academician's Table^reset;"
-                        },
-                        "labelLayout" : {
-                            "children" : {
-                                "craftingStationIcon" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/1_icon.png"
-                                },
-                                "objectImage" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/2.png:default.default"
-                                },
-                                "objectLabel" : {
-                                    "value" : "Upgrading: ^#9e6b55;Magician's Table^reset;"
-                                },
-                                "labelScrollArea"  : {
-                                    "children": {
-                                        "labelText" : {
-                                            "value" : "\"An arcanium crafting table, lets you craft various useful arcane inventions.\"\n\n- This Upgrade allow you to craft more object."
-                                        } 
-                                    }
-                                } 
-                            } 
-                        }
-                    },
-                    "recipe" : {
-                        "input" : [
-                            { "item" : "arcana_ore_arcaniumOre", "count" : 10 },
-                            { "item" : "battery", "count" : 1 },
-                            { "item" : "refinedaegisalt", "count" : 4 },
-                            { "item" : "refinedferozium", "count" : 4 },
-                            { "item" : "refinedviolium", "count" : 4 }
-                        ]
-                    }
-                }
-            ],
-
             "tooltipCfg" : "^#3ec7dd;Academician's Table^reset;| Obtaining an upgrade."
         },
-        "Cyberneticists Table" : {
+        "cyberneticiststable" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/object/craftingstation/cyberneticiststable.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "zoom" : 0,
-            "image" : {
-                "base" : "/objects/crafting/arcana_crafting_main_1/3_icon.png",
-                "hover" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=25?saturation=-25",
-                "pressed" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-50?saturation=-25",
-                "disabled" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-95?saturation=-95"
-            },
-            "sounds" : {
-                "base" : [],
-                "hover" : [],
-                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
-                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
-            },
-            "frame" : 4,
             "position" : [0, 150],
-            "positionLocked" : false,
-            "anchor" : "center",
-            "centered" : true,
-
-            "require" : [],
-            "callback" : "buttonEvent",
-            "name" : "Cyberneticists Table",
-
-            "clickEventType" : "prefab",
-            "args" : [
-                "craftable",
-                {
-                    "gui" : {
-                        "labelTitle" : {
-                            "value" : "^#bbbdce;Cyberneticist's Table^reset;"
-                        },
-                        "labelLayout" : {
-                            "children" : {
-                                "craftingStationIcon" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/2_icon.png"
-                                },
-                                "objectImage" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/3.png:default.default"
-                                },
-                                "objectLabel" : {
-                                    "value" : "Upgrading: ^#3ec7dd;Academician's Table^reset;"
-                                },
-                                "labelScrollArea"  : {
-                                    "children": {
-                                        "labelText" : {
-                                            "value" : "\"An advanced crafting table, lets you craft various useful Orion inventions.\"\n\n- This Upgrade allow you to craft more object."
-                                        } 
-                                    }
-                                } 
-                            } 
-                        }
-                    },
-                    "recipe" : {
-                        "input" : [
-                            { "item" : "arcana_bar_thoriumBar", "count" : 10 },
-                            { "item" : "orion_crafting_enhancedBattery", "count" : 1 },
-                            { "item" : "orion_crafting_jupiterCell", "count" : 1 }
-                        ]
-                    }
-                }
-            ],
-
             "tooltipCfg" : "^#bbbdce;Cyberneticist's Table^reset;| Obtaining an upgrade."
         },
-        "Artificers Table" : {
+        "artificerstable" : {
+            "path" : "/D8Encyclopedia/Category/arcana/button/object/craftingstation/artificerstable.json",
             "priority" : 1000,
-            "parallax" : 0,
-            "zoom" : 0,
-            "image" : {
-                "base" : "/objects/crafting/arcana_crafting_main_1/4_icon.png",
-                "hover" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=25?saturation=-25",
-                "pressed" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=-50?saturation=-25",
-                "disabled" : "/objects/crafting/arcana_crafting_main_1/4_icon.png?brightness=-95?saturation=-95"
-            },
-            "sounds" : {
-                "base" : [],
-                "hover" : [],
-                "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
-                "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
-            },
-            "frame" : 4,
             "position" : [0, 200],
-            "positionLocked" : false,
-            "anchor" : "center",
-            "centered" : true,
-
-            "require" : [],
-            "callback" : "buttonEvent",
-            "name" : "Artificers Table",
-
-            "clickEventType" : "prefab",
-            "args" : [
-                "craftable",
-                {
-                    "gui" : {
-                        "labelTitle" : {
-                            "value" : "^#dfcf4e;Artificer's Table^reset;"
-                        },
-                        "labelLayout" : {
-                            "children" : {
-                                "craftingStationIcon" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/3_icon.png"
-                                },
-                                "objectImage" : {
-                                    "file" : "/objects/crafting/arcana_crafting_main_1/4.png:default.default"
-                                },
-                                "objectLabel" : {
-                                    "value" : "Upgrading: ^#bbbdce;Cyberneticist's Table^reset;"
-                                },
-                                "labelScrollArea"  : {
-                                    "children": {
-                                        "labelText" : {
-                                            "value" : "\"The most capable inventing table of all, made from Aureola bars.\"\n\n- This Upgrade allow you to craft more object."
-                                        } 
-                                    }
-                                } 
-                            } 
-                        }
-                    },
-                    "recipe" : {
-                        "input" : [
-                            { "item" : "arcana_bar_aureolaBar", "count" : 1 },
-                            { "item" : "inventorstable", "count" : 1 },
-                            { "item" : "craftingfurnace", "count" : 1 },
-                            { "item" : "craftingfarm", "count" : 1 },
-                            { "item" : "craftinganvil", "count" : 1 },
-                            { "item" : "craftingfurniture", "count" : 1 },
-                            { "item" : "craftingmedical", "count" : 1 },
-                            { "item" : "woodencookingtable", "count" : 1 },
-                            { "item" : "craftingwheel", "count" : 1 }
-                        ]
-                    }
-                }
-            ],
-
             "tooltipCfg" : "^#dfcf4e;Artificer's Table^reset;| Obtaining an upgrade."
         },
 

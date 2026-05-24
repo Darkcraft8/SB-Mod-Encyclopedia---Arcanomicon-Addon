@@ -1,0 +1,60 @@
+{
+    "parallax" : 0,
+    "zoom" : 0,
+    "image" : {
+        "base" : "/objects/crafting/arcana_crafting_main_1/3_icon.png",
+        "hover" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=25?saturation=-25",
+        "pressed" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-50?saturation=-25",
+        "disabled" : "/objects/crafting/arcana_crafting_main_1/3_icon.png?brightness=-95?saturation=-95"
+    },
+    "sounds" : {
+        "base" : [],
+        "hover" : [],
+        "press" : [ "/sfx/objects/ancientenergy_pickup1.ogg", "/sfx/objects/ancientenergy_pickup2.ogg", "/sfx/objects/ancientenergy_pickup3.ogg" ],
+        "disabled" : ["/sfx/interface/nav_insufficient_fuel.ogg"]
+    },
+    "frame" : 4,
+    "position" : [0, 0],
+    "positionLocked" : false,
+    "anchor" : "center",
+    "centered" : true,
+
+    "require" : [],
+    "callback" : "buttonEvent",
+    "name" : "cyberneticiststable",
+
+    "clickEventType" : "prefab",
+    "args" : [
+        "craftable",
+        {
+            "gui" : {
+                "labelTitle" : {
+                    "value" : "^orange;Cyberneticist's Table^reset;"
+                },
+                "labelLayout" : {
+                    "children" : {
+                        "craftingStationIcon" : {
+                            "file" : "/objects/crafting/arcana_crafting_main_1/2_icon.png"
+                        },
+                        "objectImage" : {
+                            "file" : "/objects/crafting/arcana_crafting_main_1/3.png:default.default"
+                        },
+                        "objectLabel" : {
+                            "value" : "Upgrading: ^orange;Academicians Table^reset;"
+                        },
+                        "labelScrollArea"  : {
+                            "children": {
+                                "labelText" : {
+                                    "value" : "\"An advanced crafting table, lets you craft various useful Orion inventions.\"\n\n- This Upgrade allow you to craft more object."
+                                } 
+                            }
+                        } 
+                    } 
+                }
+            },
+            "recipe" : "item:arcana_crafting_main_1:upgradeStages.2.interactData.upgradeMaterials"
+        }
+    ],
+
+    "tooltipCfg" : "^orange;Cyberneticist's Table^reset;"
+}
